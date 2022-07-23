@@ -1,0 +1,41 @@
+import random
+from re import A
+# Faça uma função calculadora que os números e as operações serão feitas pelo usuário. 
+# O código deve ficar rodando infinitamente até que o usuário escolha a opção de sair. 
+# No início, o programa mostrará a seguinte lista de operações:
+# 1: Soma; 2: Subtração; 3: Multiplicação; 4: Divisão; 0: Sair
+# Digite o número para a operação correspondente e caso o usuário introduza qualquer outro, 
+# o sistema deve mostrar a mensagem “Essa opção não existe” e voltar ao menu de opções.
+# Após a seleção, o sistema deve pedir para o usuário inserir o primeiro e segundo valor, 
+# um de cada. Depois precisa executar a operação e mostrar o resultado na tela. 
+# Quando o usuário escolher a opção “Sair”, o sistema irá parar. 
+# É necessário que o sistema mostre as opções sempre que finalizar uma operação 
+# e mostrar o resultado. 
+class Calculadora:
+    def __init__(self, a, b) :
+        self.a = a
+        self.b = b
+    def somar(self):
+        return self.a +self.b
+    
+    def subtrair(self):
+        return self.a-self.b
+    
+    def multiplicar(self):
+        return self.a*self.b  
+     
+    def dividir(self):
+        return self.a/self.b
+   
+   
+r = 'S' 
+while r == 'S':   
+    n1 = float(input('Digite o valor do primeiro número:\n '))
+    n2 = float(input('Digite o valor do segundo numero, em caso de divisão o valor deve ser diferent de zero(0):\n '))
+    cal = Calculadora(n1,n2)
+    print(cal.somar())
+    print(cal.subtrair())
+    print(cal.multiplicar())
+    print(cal.dividir())
+    r = str(input('Quer continuar? [S/N]: ' )).upper()
+print('Fim')      
